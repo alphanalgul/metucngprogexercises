@@ -1,38 +1,7 @@
-lettergrade(Grade,Result):-
-     number(Grade),
-     Grade>0,Grade=<100,
-    ( Grade >=90 -> Result = "You passed and got an AA"
-     ;Grade >=85 -> Result = "You passed and got a BA"
-     ;Grade >=80 -> Result = "You passed and got a BB"
-     ;Grade >=75 -> Result = "You passed and got a CB"
-     ;Grade >=70 -> Result = "You passed and got a CC"
-     ;Grade >=65 -> Result = "You passed and got a DC"
-     ;Grade >=60 -> Result = "You passed and got a DD"
-     ;Grade >=50 -> Result = "You failed with an FD"
-     ;Grade <50 ->  Result = "You failed with an FF"
-     ;Result = "Invalid Grade").
-
-find_max(X,Y,Max):-
-     number(X),number(Y),
-     (X>=Y, Max is X
-      ;  Max is Y).
-
-factorial(1,1).
-factorial(2,1).
-factorial(X,Result):-
-     number(X),
-     X1 is X-1,
-     X2 is X-2,
-     factorial(X1,R1),
-     factorial(X2,R2),
-     Result is R1+R2.
-
-power(_,0,1).
-power(X,N,Result):-
-     number(X),number(N),
-     N1 is N-1,
-     power(X,N1,R1),
-     Result is X*R1.
+%Computes the values of Y based on the values of X
+%If X > 4:    Y = X⁴ + 3X + 1
+%If X < 0:    Y = X² + 2X + 24
+%Else (0 ≤ X ≤ 4): Y = X³
 
 a_function(X,Y):-
      number(X),
@@ -40,6 +9,9 @@ a_function(X,Y):-
      ;X<0 -> Y is X**2+2*X+24
      ;Y is X**3).
 
+%Base cases F(0) = 3(X=0) F(1) = 4(X=1)
+%Compute the Values of Y based on the two previous values of X
+%Y = 3*F(X-1) + 2*F(X-2)+1
 recfunc(0,3).
 recfunc(1,4).
 recfunc(X,Y):-
