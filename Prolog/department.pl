@@ -1,3 +1,5 @@
+%This code defines employee and department data, and returns the first and last name of the employee who manages the Deli department.
+
 employee(193,'Jones','John','173 Elm St.','Hoboken','NJ', 12345,1,'25 Jun 93',25500).
 employee(181,'Doe','Betty','11 Spring St.','Paterson','NJ', 12354,3,'12 May 91',28500).
 
