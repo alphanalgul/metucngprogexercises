@@ -12,7 +12,7 @@ data TernaryTree = Empty | Node Int TernaryTree TernaryTree TernaryTree  derivin
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 -- completeternary
-data TernaryTree = Empty | Node Int TernaryTree TernaryTree TernaryTree  deriving (Show) 
+
 build i n = if i > n then Empty else Node i (build (3*i - 1) n)  (build (3*i) n)  (build (3*i + 1) n) 
 completeternary n = build 1 n 
 					   
