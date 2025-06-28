@@ -1,3 +1,4 @@
+%Prints the names of the students who are enrolled in the given course
 lectures(turing, 9020).
 lectures(codd, 9311).
 lectures(backus, 9021).
