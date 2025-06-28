@@ -1,3 +1,4 @@
+%Prints out the lettergrade depending on the grade
 lettergrade(Grade,Result):-
     (Grade >=90 -> Result = "You passed with an AA";
      Grade >=85 -> Result = "You passed with a BA";
