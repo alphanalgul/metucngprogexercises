@@ -1,3 +1,5 @@
+%computes the xth fibonacci number recursively
+
 fibonacci(1,1).
 fibonacci(2,1).
 fibonacci(X,R):-
