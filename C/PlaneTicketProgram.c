@@ -1,3 +1,11 @@
+/*
+ * This program simulates a flight booking system with economy and business class seats.
+ * - Prompts the user to make bookings until all seats are filled or the user exits.
+ * - Economy and business classes are evenly split in total seats.
+ * - After booking, calculates total earnings and projects the amount if invested at 25% annual return using recursion.
+ * - Recommends future actions based on the return on investment.
+ */
+
 #include <stdio.h>
 double invest(double money,int years)
 {
