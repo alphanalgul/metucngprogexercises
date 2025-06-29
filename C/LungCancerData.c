@@ -65,63 +65,54 @@ void displayData(Data  *records,int numRecords)
 }
 void statData(Data *records, int numRecords)
 {
-    int i,j;
-    int cancer=0,no_cancer=0,male=0,female=0;
-    for(i=0;i<numRecords;i++)
-    {
-       for(j=0;j<numRecords;j++)
-       {
-           if(records[i].gender[j]=='M')
-           {
-               male++;
-           }
-           if(records[i].gender[j]=='F')
-           {
-               female++;
-           }
-           if(records[i].cancer[j]=='Y')
-           {
-               cancer++;
-           }
-           if(records[i].cancer[j]=='N')
-           {
-               no_cancer++;
-           }
-       }
+    int cancer = 0, no_cancer = 0, male = 0, female = 0;
 
+    for (int i = 0; i < numRecords; i++) {
+        if (records[i].gender[0] == 'M') male++;
+        if (records[i].gender[0] == 'F') female++;
+        if (records[i].cancer[0] == 'Y') cancer++;
+        if (records[i].cancer[0] == 'N') no_cancer++;
     }
-    printf("\n%d patients with cancer and %d patients without cancer",cancer,no_cancer);
-    printf("\n%d Male patients and %d Female patients",male,female);
+
+    printf("\n%d patients with cancer and %d patients without cancer", cancer, no_cancer);
+    printf("\n%d Male patients and %d Female patients", male, female);
 }
-void splitData(Data *records,int numPatients)
+void splitData(Data *records, int numPatients)
 {
-    int i,j;
-    FILE *cancer,*non_cancer;
-    for(i=0;i<numPatients;i++)
-    {
-      for(j=0;j<numPatients;j++)
-      {
-          if(records[i].cancer[j]=='Y') {
+    FILE *cancer = fopen("cancer.txt", "w");
+    FILE *non_cancer = fopen("non_cancer.txt", "w");
 
-              cancer = fopen("cancer.txt", "w");
-              fprintf(cancer,"%d %s %s %s %d %s",records[i].id,records[i].name,records[i].surname,records[i].gender
-                      ,records[i].smoking,records[i].cancer);
+    if (!cancer || !non_cancer) {
+        printf("Error opening output files.\n");
+        return;
+    }
 
-          }
-      }
-        for(j=0;j<numPatients;j++)
-        {
-            if(records[i].cancer[j]=='N') {
-
-                non_cancer = fopen("non_cancer.txt", "w");
-                fprintf(cancer,"%d %s %s %s %d %s",records[i].id,records[i].name,records[i].surname,records[i].gender
-                        ,records[i].smoking,records[i].cancer);
-
-            }
+    for (int i = 0; i < numPatients; i++) {
+        if (records[i].cancer[0] == 'Y') {
+            fprintf(cancer, "%d %s %s %s %d %s\n",
+                    records[i].id,
+                    records[i].name,
+                    records[i].surname,
+                    records[i].gender,
+                    records[i].smoking,
+                    records[i].cancer);
+        } else if (records[i].cancer[0] == 'N') {
+            fprintf(non_cancer, "%d %s %s %s %d %s\n",
+                    records[i].id,
+                    records[i].name,
+                    records[i].surname,
+                    records[i].gender,
+                    records[i].smoking,
+                    records[i].cancer);
         }
     }
-    printf("\nTwo files are created for you: cancer.txt and noncancer.txt! ");
+
+    fclose(cancer);
+    fclose(non_cancer);
+
+    printf("Two files are created for you: cancer.txt and non_cancer.txt!\n");
 }
+
 int main(int argc,char *argv[]) {
     if(argc!=3)
     {
