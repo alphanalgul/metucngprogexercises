@@ -1,4 +1,13 @@
-//
+/*
+ * This program manages instructor records using a binary search tree (BST).
+ * Features:
+ * - Insert instructor names and titles into a BST
+ * - Display the tree in-order
+ * - Search for an instructor by full name and return their title
+ * - Search for all instructors whose names begin with a specific character
+ *
+ * Note: Instructor names are compared lexicographically for BST ordering.
+ */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -60,15 +69,14 @@ int main()
             case 't':
                 printf("\nEnter instructors name:");
                 scanf("%s",instructor);
-                title= searchInstructor(instructor,myTree);
-                if(strcmp(title,"n")==0)
-                {
-                    printf("\nThis instructor does not exist!");
-                }
-                else
-                {
-                    printf("%s",title);
-                }
+                char *foundTitle = searchInstructor(instructor, myTree);
+ 
+                    if (strcmp(foundTitle, "n") == 0) {
+                            printf("\nThis instructor does not exist!");
+                   } 
+                    else {
+                            printf("%s", foundTitle);
+                          }
 
                 break;
             case 's':
@@ -139,16 +147,15 @@ char *searchInstructor(char instructor[],struct TreeNode *t)
     }
 
 }
-void searchInstructors(char *c,struct TreeNode *t,int size)
+void searchInstructors(char *c, struct TreeNode *t)
 {
-  int i;
-  for(i=0;i<size;i++)
-  {
-      if(strcmp(c,&t->instructor[0]))
-      {
-          printf("\n%s",t->title);
-      }
-  }
+    if (t != NULL) {
+        searchInstructors(c, t->left);
+        if (t->instructor[0] == c[0]) {
+            printf("\n%s %s", t->instructor, t->title);
+        }
+        searchInstructors(c, t->right);
+    }
 }
 void DisplayTree(struct TreeNode* t)
 {
