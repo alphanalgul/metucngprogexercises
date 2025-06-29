@@ -1,4 +1,4 @@
-//Alphan Algul 2584639
+
 #include <stdio.h>
 #include<time.h>
 #include<stdlib.h>
