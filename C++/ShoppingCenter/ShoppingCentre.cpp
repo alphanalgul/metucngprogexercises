@@ -33,6 +33,42 @@ ShoppingCentre::~ShoppingCentre() {
     }
 }
 
+ShoppingCentre::ShoppingCentre(const ShoppingCentre& other) {
+    name = new char[strlen(other.name) + 1];
+    strcpy(name, other.name);
+    size = other.size;
+    numBusinesses = other.numBusinesses;
+    for (int i = 0; i < numBusinesses; i++) {
+        if (other.businesses[i]->getType() == "Shop")
+            businesses[i] = new Shop(*(Shop*)other.businesses[i]);
+        else if (other.businesses[i]->getType() == "Restaurant")
+            businesses[i] = new Restaurant(*(Restaurant*)other.businesses[i]);
+    }
+}
+
+ShoppingCentre& ShoppingCentre::operator=(const ShoppingCentre& other) {
+    if (this != &other) {
+        delete[] name;
+        for (int i = 0; i < numBusinesses; i++) {
+            delete businesses[i];
+        }
+
+        name = new char[strlen(other.name) + 1];
+        strcpy(name, other.name);
+        size = other.size;
+        numBusinesses = other.numBusinesses;
+
+        for (int i = 0; i < numBusinesses; i++) {
+            if (other.businesses[i]->getType() == "Shop")
+                businesses[i] = new Shop(*(Shop*)other.businesses[i]);
+            else if (other.businesses[i]->getType() == "Restaurant")
+                businesses[i] = new Restaurant(*(Restaurant*)other.businesses[i]);
+        }
+    }
+    return *this;
+}
+
+
 void ShoppingCentre::setShoppingCentreName(char *sname) {
     delete[] name;
     name = new char[strlen(sname) + 1];
