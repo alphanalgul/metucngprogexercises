@@ -1,5 +1,6 @@
 /*
- * This program analyzes patient cholesterol levels entered as characters (D/d, R/r, H/h)
+ * This program analyzes patient cholesterol levels entered as characters 
+ *(D/d, R/r, H/h)
  * and categorizes them into three health groups: Dangerous, At Risk, and Healthy.
  * It calculates and displays the percentage of patients in each category
  * for a specific lab identified by its Lab ID.
