@@ -25,8 +25,8 @@ public:
     int getBusinessSize();
     int  getEmployeeCount();
     void addEmployee(Employee e);
-    void printBusiness();
-    void printBusinessEmployees();
+    virtual void printBusiness();
+    virtual void printBusinessEmployees();
     void searchByName(char *keyword);
     int getType();
 };
