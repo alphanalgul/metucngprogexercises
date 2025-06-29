@@ -1,3 +1,12 @@
+/*
+ * This program reads patient data from a file specified by the user via command-line arguments,
+ * stores it in an array of structures, and performs the following:
+ * - Displays all patient records
+ * - Calculates and prints statistics (gender and lung cancer status)
+ * - Separates and saves patients with and without lung cancer into separate files (cancer.txt and non_cancer.txt)
+ *
+ * Usage: ./program_name <filename> <max_records>
+ */
 
 #include <stdio.h>
 #include <stdlib.h>
