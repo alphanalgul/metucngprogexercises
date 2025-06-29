@@ -1,4 +1,10 @@
-
+/*
+ * This program simulates eye dilation data for a number of users.
+ * For each user, it randomly generates iris and pupil radii,
+ * calculates a dilation ratio using a custom formula, and then
+ * classifies the user into an age group (Young, Adult, Elderly)
+ * based on the computed dilation ratio.
+ */
 #include <stdio.h>
 #include<stdlib.h>
 #include<time.h>
