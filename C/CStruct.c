@@ -1,3 +1,12 @@
+/*
+ * This program reads patient records from a file (data.txt),
+ * stores them in dynamically allocated memory using a struct,
+ * displays all patient information, calculates basic statistics
+ * (such as gender and cancer status), and writes two separate
+ * files: one for patients with lung cancer (cancer.txt) and
+ * one for those without (noncancer.txt).
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
