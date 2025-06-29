@@ -21,6 +21,9 @@ D = (A XOR B) XOR Bin
 
 Bout = (NOT A AND Bin) OR (NOT A AND B) OR (B AND Bin)
 
+
+
+
 📋 Features
 Menu-driven interface with loop until user exits
 
@@ -34,6 +37,9 @@ Calculates D and Bout without using C bitwise operators
 
 Handles all edge cases (invalid input, wrong bit length, etc.)
 
+
+
+
 🖥️ Sample Run
 Welcome to Full Subtractor!
 
@@ -46,6 +52,9 @@ You have chosen option 1
 Which base will you use to enter input (base 2 or base 16)? 2
 Please enter your input: 101
 D is 0 Bout is 0
+
+
+
 
 🛠️ Technical Constraints
 ❌ No global variables
