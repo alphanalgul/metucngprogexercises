@@ -1,3 +1,13 @@
+/*
+ * This program calculates the Mean Squared Error (MSE) between two vectors:
+ * - One vector is filled by user input (with values between 1 and 100).
+ * - The second vector is randomly generated (values 1–100).
+ *
+ * The program prints both vectors and computes:
+ *     MSE = sum((A[i] - B[i])²) / N
+ */
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
