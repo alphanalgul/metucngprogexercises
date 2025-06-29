@@ -31,5 +31,15 @@ It produces two outputs:
 ---
 
 ## 🖥️ Sample Run
+Welcome to Full Subtractor!
 
+(1) Compute and Display the outputs
+(2) Quit
+
+You choose: 1
+You have chosen option 1
+
+Which base will you use to enter input (base 2 or base 16)? 2
+Please enter your input: 101
+D is 0 Bout is 0
 
