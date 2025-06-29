@@ -1,3 +1,16 @@
+/*
+ * The Circle Game
+ * 
+ * A C-based board game where a player and a computer race 
+ * around the edges of a 10x10 board.
+ * Each round, they roll a dice to move forward, but traps 
+ * placed on the board can send them backwards.
+ * The first to complete a loop around the board wins. Includes 
+ * logic for dice rolling, trap placement,
+ * board rendering, and movement handling.
+ */
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
