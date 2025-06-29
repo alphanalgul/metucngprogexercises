@@ -1,3 +1,14 @@
+/*
+ * This program processes internship data from a file.
+ * It loads records into memory and allows the user to:
+ * - Display all student internship data
+ * - Search by name or full name
+ * - Sort by score or letter grade
+ * - Display department-wise statistics of pass/fail students
+ *
+ * Letter grades are automatically calculated as 'S' (>= 70) or 'U'.
+ * The file is passed as a command-line argument.
+ */
 
 #include <stdio.h>
 #include <stdlib.h>
