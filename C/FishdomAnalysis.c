@@ -1,3 +1,23 @@
+/*
+ * Fishdom AVL Tree Analysis
+ *
+ * This program reads fish records from a CSV file and stores them
+ * in an AVL tree ordered by weight. It supports:
+ *
+ * - Reading and parsing data: name, weight, length, date, city
+ * - Inserting fish records into a balanced AVL tree
+ * - Handling multiple fish with the same weight in a node
+ * - Displaying all fish in ascending order of weight
+ * - Finding and printing the heaviest and longest fish entries
+ *
+ * Usage:
+ *   ./program_name <input_filename>
+ *
+ * Notes:
+ * - AVL tree maintains balance for efficient insertions and lookups
+ * - Dynamic memory is used with safety checks
+ * - A cleanup function is recommended for memory deallocation
+ */
 
 #include <stdio.h>
 #include <stdlib.h>
