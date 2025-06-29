@@ -1,3 +1,30 @@
+/*
+ * Eye Data Management System
+ * 
+ * This program reads and manages eye-tracking data (Pupil/Iris coordinates and radii)
+ * from a file, grouped by user. Data is stored using linked lists:
+ * 
+ * - Each user has a linked list of their eye measurements
+ * - Users are managed in a separate linked list
+ * 
+ * Features:
+ * - Loading data from a file
+ * - Automatically checks and handles invalid (zero) values
+ * - Allows users to delete or correct problematic records
+ * - Displays statistics: count of eye records and estimated age group
+ * - Case-insensitive username handling
+ * 
+ * Age groups are estimated based on the average dilation ratio (IrisR / PupilR):
+ *   - < 1.6   → Young
+ *   - 1.6–4.6 → Adult
+ *   - > 4.6   → Elderly
+ * 
+ * Usage:
+ *   - Compile and run the program
+ *   - Provide the input filename when prompted
+ *   - Follow the menu to view statistics or exit
+ */
+
 
 #include <stdio.h>
 #include <stdlib.h>
